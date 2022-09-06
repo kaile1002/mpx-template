@@ -1,45 +1,39 @@
 <template>
   <view class="container">
-    <view class="index">
-      <view class="child">child</view>
-    </view>
-    <view class="common">common
-    </view>
-    <van-button type="primary">按钮123</van-button>
-    <pop-up-login></pop-up-login>
-    <div class="section"></div>
+    <custom-navigation title='首页' background='#fff' back="{{true}}" home="{{false}}"></custom-navigation>
+    <van-button type="primary" bindtap="openMask()">打开登录弹窗</van-button>
+    <pop-up-login wx:ref="popUpLogin"></pop-up-login>
   </view>
-  
 </template>
 
 <script>
-  import mpx, { createPage } from '@mpxjs/core'
+import { createPage } from '@mpxjs/core'
 
-  createPage({
-    onLoad () {},
-    methods: {
-      goMinePage () {
-        mpx.navigateTo({
-          url: '/pages/mine'
-        })
-      }
-    }
-  })
-</script>
-<style lang="less">
-  .index{
-    color:red;
-    .child{
-      color:pink;
+createPage({
+  onLoad () { },
+  ready () { },
+  methods: {
+    openMask () {
+      this.$refs.popUpLogin.toggleMask()
+    },
+    handleTap (e) {
+      console.log('name:', e.target.dataset.name)
+    },
+    // 直接通过参数获取数据，直观方便
+    handleTapInline (name) {
+      console.log('name:', name)
     }
   }
+})
+</script>
+<style lang="less">
 </style>
 
 <script type="application/json">
   {
     "usingComponents": {
       "pop-up-login": "../components/common/pop-up-login",
-      "van-button": "@vant/weapp/button/index"
+      "custom-navigation": "../components/common/custom-navigation"
     }
   }
 </script>

@@ -25,6 +25,9 @@
       "backgroundColor": "#f5f5f5",
       "navigationStyle":"custom"
     },
+    "usingComponents":{
+      "van-button": "@vant/weapp/button/index"
+    },
     "tabBar":{
       "color":"#999",
       "selectedColor":"#404040",
