@@ -1,7 +1,7 @@
 <template>
   <view class="container">
     <custom-navigation title='首页' background='#fff' back="{{true}}" home="{{false}}"></custom-navigation>
-    <van-button type="primary" bindtap="openMask()">打开登录弹窗</van-button>
+    <!-- <van-button type="primary" bindtap="openMask()">打开登录弹窗</van-button> -->
     <pop-up-login wx:ref="popUpLogin"></pop-up-login>
   </view>
 </template>
